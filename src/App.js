@@ -1,9 +1,12 @@
 import React from "react";
 
+import { Container } from "./components/Container/Container";
 import { FeedbackBtn } from "./components/FeedbackBtn/FeedbackBtn";
 import { Notification } from "./components/Notification/Notification";
 import { Section } from "./components/Section/Section";
 import { Statistics } from "./components/Statistics/Statistics";
+
+import { H1Styled } from "./App.styles";
 
 class App extends React.Component {
   state = { good: 0, neutral: 0, bad: 0 };
@@ -33,8 +36,8 @@ class App extends React.Component {
     const { good, neutral, bad } = this.state;
 
     return (
-      <>
-        <h1>Feedback Service</h1>
+      <Container>
+        <H1Styled>Feedback Service</H1Styled>
         <Section title={"Please leave your feedback"}>
           <FeedbackBtn
             options={["good", "neutral", "bad"]}
@@ -55,7 +58,7 @@ class App extends React.Component {
             />
           )}
         </Section>
-      </>
+      </Container>
     );
   }
 }
